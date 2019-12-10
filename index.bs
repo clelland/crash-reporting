@@ -43,9 +43,7 @@ Markup Shorthands: css off, markdown on
 
   <h3 id="concept-crash">Crash</h3>
 
-
-  <h3 id="concept-oom">OOM</h3>
-
+  <h3 id="concept-oom">Out-of-Memory</h3>
 
   <h3 id="concept-unresponsive">Unresponsive</h3>
 
@@ -96,12 +94,15 @@ Markup Shorthands: css off, markdown on
     </tbody>
   </table>
 
-  </div>
-
   Note: Crash reports are always delivered to the <a>endpoint group</a> named
   <code>default</code>; there is currently no way to override this.  If you want
   to receive other kinds of reports, but not crash reports, make sure to use a
   different name for the endpoint group that you choose for those reports.
+
+  Note: Crash reports are not observable to JavaScript, as the page which would
+  receive them is, by definition, not able to. The IDL description of
+  CrashReportBody exists in this spec to provide a JSON-seriaizable interface
+  whose serialization can be embedded in the out-of-band reports.
 </section>
 
 <section>
@@ -170,6 +171,6 @@ Markup Shorthands: css off, markdown on
   The remainder of this section discusses privacy considerations for crash
   reporting specifically.
 
-  <h3 id="cross-origin-contamination">Cross-Origin Contamination</h3>
+  <h3 id="cross-process-contamination">Cross-Process Contamination</h3>
 
 </section>
